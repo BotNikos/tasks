@@ -1,0 +1,32 @@
+* {
+    margin: 0;    
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.main {
+    margin: 0 auto;
+}
+
+.task {
+    width: 100%; 
+    border-radius: 15px;
+}
+
+.category {
+    height: 100vh;
+    text-align: center;
+}
+
+.pd {
+    padding: 10px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+

@@ -6,17 +6,72 @@
 }
 
 .main {
+    height: 100vh;
     margin: 0 auto;
 }
 
-.task {
-    width: 100%; 
+.append_task {
+    background-color: #EDEEF0;
     border-radius: 15px;
+    opacity: 0;
+    cursor: pointer ;
+    transition: all ease .2s;
+}
+
+.category:hover .append_task {
+    opacity: 100;
+}
+
+.task {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.categories {
+    height: 100%;
 }
 
 .category {
-    height: 100vh;
     text-align: center;
+}
+
+.modal_content_background {
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.modal_background {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal {
+    background-color: #EDEEF0;
+    border-radius: 15px;
+    width: 600px;
+}
+
+.task_name_input, .task_description_input {
+    padding: 10px;
+
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    outline: none;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    resize: none;
+}
+
+.task_name_input:focus {
+    border: 2px solid #FFD166;
 }
 
 .pd {
@@ -28,5 +83,12 @@
     flex-direction: row;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
 
-
+.center {
+    align-items: center;
+    justify-content: center;
+}

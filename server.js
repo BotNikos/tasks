@@ -20,14 +20,11 @@ app.get('/index', (req, res) => {
     res.sendFile(`${__dirname}/index.html`);
 });
 
-app.get('/users', async (req, res, next) => {
-    const db = req.db;
-    const users = await db.collection('users').find({}).toArray();
-    res.send(users);
-    next();
-});
+const tasks = require('./server_modules/tasks');
+app.use('/tasks', tasks);
 
 app.use((req, res) => {
+    console.log('connection closed');
     client.close();
 });
 

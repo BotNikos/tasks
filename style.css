@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+    transition: all ease .3s;
 }
 
 .main {
@@ -26,6 +27,7 @@
     width: 100%;
     border-radius: 15px;
     cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .categories {
@@ -43,6 +45,8 @@
 }
 
 .modal_background {
+    overflow-x: hidden;
+    inset: 0;
     position: absolute;
     background-color: rgba(0, 0, 0, .8);
     z-index: 1;
@@ -70,8 +74,43 @@
     resize: none;
 }
 
-.task_name_input:focus {
+.task_name_input:focus, .task_description_input:focus {
     border: 2px solid #FFD166;
+}
+
+.modal_buttons .append_button, .close_button {
+    width: 50%;
+}
+
+.append_button button {
+    background-color: #FFD166;
+}
+
+.close_button button {
+    background-color: #EF476F;
+}
+
+.modal_buttons button {
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.category_select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .pd {

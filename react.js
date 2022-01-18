@@ -5,7 +5,7 @@
 
 const App = () => {
     const [categories, setCategories] = React.useState([]);
-    const [modal, setModal] = React.useState({show: true});
+    const [modal, setModal] = React.useState({show: false});
     const [forceUpdate, setForceUpdate] = React.useState(0);
 
     React.useEffect(async () => {
@@ -13,25 +13,29 @@ const App = () => {
         setCategories(await categories.json());
     }, [forceUpdate]);
 
-    const increment = () => {
+    const taskReload = () => {
         setForceUpdate(forceUpdate + 1);
     }
 
     return (
         <section className='main flex-column'>
 
-            {modal.show ? <Modal/> : ''}
+        {modal.show ? <Modal setModal={setModal} elementId={modal.categoryId} taskReload={taskReload} initialData={{name: '', description: ''}}/> : ''}
 
             <div className="categories flex-row">
                 {
                     categories.map(elem => {
                         return (
                             <Category
-                                name={elem.name}
+                                info={{
+                                    id: elem.id,
+                                    name: elem.name,
+                                    color: elem.color,
+                                    width: 100 / categories.length,
+                                }}
                                 tasks={elem.tasks}
-                                color={elem.color}
-                                width={100 / categories.length}
                                 setModal={setModal}
+                                taskReload={taskReload}
                                 key={elem.id}
                             />
                         )
